@@ -29,7 +29,6 @@ let store = new Vuex.Store({
         setBooksToState(state, books){
             if(books.totalItems === 0){
                 state.books.msgStatus.noFoundBooksMsg = true;
-                console.log('По вашему запросу ничего не найдено')
             } else{
                 if(state.books.totalItems === 0){
                    state.books.totalItems = books.totalItems;
@@ -37,7 +36,6 @@ let store = new Vuex.Store({
                 if(!books.items){
                     state.books.totalItems = state.books.items.length;
                     state.books.msgStatus.isAllBooksMsg = true;
-                    console.log('Выведены все найденные книги по данному запросу')
                 } else {
                     books.items.forEach(el => {
                     state.books.items.push(el)});
@@ -80,7 +78,6 @@ let store = new Vuex.Store({
             context.commit('setUserRequest');
             axios.get(context.state.userRequest)
                 .then(response => {
-                    console.log(response.data);
                     context.commit('setBooksToState', response.data);
                     return response;
                 })

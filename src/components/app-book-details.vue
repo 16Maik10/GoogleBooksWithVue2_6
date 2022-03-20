@@ -76,6 +76,11 @@ export default {
         font: 400 25px sans-serif;
         text-decoration: none;
         color: firebrick;
+        transition: color 0.2s;
+
+        &:hover{
+        color: #24b222;
+    }
     }
 }
 </style>

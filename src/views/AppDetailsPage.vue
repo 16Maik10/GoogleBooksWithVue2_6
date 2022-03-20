@@ -27,10 +27,16 @@ export default {
 <style lang="scss">
 .app-details-page__link{
     display: block;
-    margin: 20px 0;
+    width: fit-content;
+    margin: 20px auto;
     text-align: center;
     text-decoration: none;
     font: 700 25px sans-serif;
     color: #f44;
+    transition: color .2s;
+
+    &:hover{
+        color: #24b222;
+    }
 }
 </style>
